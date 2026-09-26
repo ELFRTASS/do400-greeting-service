@@ -1,6 +1,10 @@
 pipeline{
-    agent{
-        label "nodejs"
+    agent {
+        kubernetes {
+            inheritFrom 'nodejs'
+            defaultContainer 'nodejs'
+            serviceAccount 'jenkins'
+        }
     }
     stages{
         stage("Install dependencies"){
