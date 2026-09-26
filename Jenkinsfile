@@ -48,5 +48,10 @@ pipeline{
                     '''
             }
         }
+        stage("Test after deploy"){
+            steps{
+                echo "Testing after deploy"
+            }
+        }
     }
 }
